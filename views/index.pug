@@ -1,0 +1,49 @@
+doctype html
+html(lang="en")
+  head
+    meta(http-equiv='Content-Type', content='text/html', charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='A tutorial to implement Filestack security')
+    meta(name='name', content='Samuele Zaza')
+    meta(name='email' content='zaza.samuele@gmail.com')
+
+    link(rel='icon', href='https://assets.filestackapi.com/web/c3417dc/img/favicon.ico')
+    link(href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet')
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet')
+    link(href='./css/ie10-viewport-bug-workaround.css' rel='stylesheet')
+    link(href='./css/jumbotron.css' rel='stylesheet')
+    link(href='./css/main.css' rel='stylesheet')
+
+    title Filestack Security
+  body
+    nav(class='navbar navbar-inverse navbar-fixed-top')
+      div(class='container')
+        div(class='navbar-header')
+          button(type='button', class='navbar-toggle collapsed', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+            span(class='sr-only') Toggle navigation
+            span(class='icon-bar')
+            span(class='icon-bar')
+            span(class='icon-bar')
+          a(class='navbar-brand', href='#') Gallery
+        div(id='navbar', class='navbar-collapse collapse')
+          ul(class='nav navbar-nav navbar-right')
+            li
+              a(href='./upload') Upload
+            li
+              a(href='#') Tutorial  
+    div(class='container')  
+      div(class='row', id='image-list')
+        div(class='imagesList')
+          each image in list
+            - var src = 'https://cdn.filestackcontent.com/' + image.handler + '?policy=' + image.policy + '&signature=' + image.signature;
+            div(class='col-md-4')
+              div(class='thumbnail')
+                img(src=src, class='img-rounded')
+              p= image.caption
+              
+      hr
+      footer
+        p © 2016 Samuele Zaza, Filestack Tech Evangelist.        
+   
+    
