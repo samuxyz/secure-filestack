@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import getPermissions from './src/core';
 import list from './data';
 
+
 const app = express();
 const port = process.env.PORT || 8080;
 
